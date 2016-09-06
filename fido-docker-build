@@ -1,0 +1,5 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+IMAGE=fidoip32:1.0.5_5-1_1
+
+docker build -t $IMAGE fidoip-Dockerfile
