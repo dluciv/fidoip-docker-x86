@@ -2,7 +2,7 @@ Dockerfile + several scripts
 to run [FidoIP suite](https://sourceforge.net/projects/fidoip/)
 with [Docker](https://www.docker.com/)
 
-# Foreword
+# Why?..
 
 **Why FidoNet?** Because it is cool and still alive.
 
