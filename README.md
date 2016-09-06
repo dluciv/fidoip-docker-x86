@@ -6,10 +6,11 @@ with [Docker](https://www.docker.com/)
 
 **Why FidoNet?** Because it is cool and still alive.
 
-**Why Docker?** FidoIP has a lot of legacy irregularities like generating shell scripts
+**Why Docker?** FidoIP has a lot of irregularities like generating shell scripts
 with hardcoded configuration to `/usr/local/bin`. So it is difficult a bit
-to keep it in the box, but this Dockerfile tries to do it. Anyway we should
-remember here that all this legacy stuff comes from DOS and OS/2, so it is
+to keep it in the box, but this Dockerfile tries to do so. Anyway we should
+remember here that all this funny legacy stuff comes from DOS (it is quite ok
+to store user data in system directory then =) ) and OS/2, so it is
 very nice itself that it can be deployed in Unix-like environment.
 
 **Why 32 bit?** Just because my server is x86 PC. You are free to derive it from 64 bit
