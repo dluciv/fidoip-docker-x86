@@ -29,7 +29,7 @@ RUN wget 'http://downloads.sourceforge.net/project/fidoip/fidoip/1.0.5/fidoip-1.
  && cd fidoip-1.0.5 \
  && rm fidoip_win-1.0.5_5-1.zip \
  && ./fido_linux.sh fido \
- && (echo 'Full Name\nStation Name\nLocation\n2:5030/1111.2222\nUplink Name\n2:5030/1111\nf1111.n5030.z2.binkp.net\nUplink Password\nn\ny' | ./setup_config.bash fido) \
+ && (echo 'Full Name\nStation Name\nLocation\n2:5030/1111.2222\nUplink Name\n2:5030/1111\nf1111.n5030.z2.binkp.net\nUplink Password\nn\ny' | ./setup_config.bash) \
  && ./relinkapps.sh \
  && ./set_perm.sh fido \
  && cd \
