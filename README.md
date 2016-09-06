@@ -4,6 +4,17 @@ with [Docker](https://www.docker.com/)
 
 # Why?..
 
+                      __
+                     /  \
+                    /|oo \
+                   (_|  /_)
+                    _`@/_ \    _
+                   |     | \   \\
+                   | (*) |  \   )) 
+      ______       |__U__| /  \//
+     / FIDO \       _//|| _\   /
+    (________)     (_/(_|(____/
+
 **Why FidoNet?** Because it is cool and still alive.
 
 **Why Docker?** FidoIP has a lot of irregularities like generating shell scripts
