@@ -34,7 +34,7 @@ image and use `fido_linux.64.sh` instead of `fido_linux.sh` to build this softwa
 1. `$ ./fido-docker-build`
 2. `$ ./fido-init` and then inside container root shell (which will open):
     1. `# cd fidoip-1.0.5`
-    2. `# setup_config.bash` and answer some questions
+    2. `# ./setup_config.bash` and answer some questions
     3. `# ./set_perm.sh fido`
 
 This will hopefully be simplified in the future.
