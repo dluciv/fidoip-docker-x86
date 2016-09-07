@@ -24,10 +24,16 @@ WORKDIR /root
 
 RUN apt-get -y install build-essential unzip zip bzip2 libncurses5-dev gettext wget xutils screen texinfo
 
+RUN apt-get -y install cvs
+
+ADD no-cvs-login.patch /root/
+
 RUN wget 'http://downloads.sourceforge.net/project/fidoip/fidoip/1.0.5/fidoip-1.0.5_5-1.tar' \
  && tar -xpf fidoip-1.0.5_5-1.tar \
+ && patch -p0 -t < no-cvs-login.patch \
  && cd fidoip-1.0.5 \
  && rm fidoip_win-1.0.5_5-1.zip \
+ && ./fidoip-cvs-update.sh \
  && ./fido_linux.sh fido \
  && (echo 'Full Name\nStation Name\nLocation\n2:5030/1111.2222\nUplink Name\n2:5030/1111\nf1111.n5030.z2.binkp.net\nUplink Password\nn\ny' | ./setup_config.bash) \
  && ./relinkapps.sh \

@@ -1,0 +1,22 @@
+diff -ur fidoip-1.0.5/binkd/binkd-cvs.sh fidoip-1.0.5-patched/binkd/binkd-cvs.sh
+--- fidoip-1.0.5/binkd/binkd-cvs.sh	2014-01-27 16:21:41.000000000 +0300
++++ fidoip-1.0.5-patched/binkd/binkd-cvs.sh	2016-09-07 16:21:23.358155400 +0300
+@@ -11,7 +11,6 @@
+ rm -f distinfo*
+ rm -rf binkd-1.0.0
+ rm -rf binkd
+-cvs -d :pserver:binkd@cvs.happy.kiev.ua:/cvs login
+ cvs -d :pserver:binkd@cvs.happy.kiev.ua:/cvs co binkd
+ mv binkd binkd-1.0.0
+ zip binkd100.zip -r binkd-1.0.0
+diff -ur fidoip-1.0.5/golded/golded-cvs.sh fidoip-1.0.5-patched/golded/golded-cvs.sh
+--- fidoip-1.0.5/golded/golded-cvs.sh	2014-01-27 16:22:08.000000000 +0300
++++ fidoip-1.0.5-patched/golded/golded-cvs.sh	2016-09-07 16:21:33.083390300 +0300
+@@ -11,7 +11,6 @@
+ rm -rf golded+
+ rm -f distinfo*
+ rm -f PKGBUILD
+-cvs -d:pserver:anonymous@golded-plus.cvs.sourceforge.net:/cvsroot/golded-plus login
+ cvs -z3 -d:pserver:anonymous@golded-plus.cvs.sourceforge.net:/cvsroot/golded-plus co -P .
+ tar -cjpf gps90710.tb2 golded+
+ cp -v gps90710.tb2 "$CWD"
