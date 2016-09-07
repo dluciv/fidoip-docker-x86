@@ -14,4 +14,4 @@ docker cp "$CONTAINER":/usr/local/bin $DIR/usr/local
 
 docker rm -v $CONTAINER
 
-./fido bash
+$DIR/fido-shell bash

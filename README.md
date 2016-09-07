@@ -50,10 +50,12 @@ so they are likely subject of backup if you practice it =).
 
 ## To use configuration
 
-Run `$ ./fido`, then you will see container user shell
+Run `$ ./fido-shell`, then you will see container user shell
 
 * `$ rs` to try to send/receive mail
 * `$ g` to launch GoldEd
+
+If you want to automate `$ rs`, `./fido-rs` is at your service, it just launches `rs` in `fido-shell`.
 
 # Node mode
 
