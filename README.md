@@ -15,7 +15,7 @@ with [Docker](https://www.docker.com/)
      / FIDO \       _//|| _\   /
     (________)     (_/(_|(____/
 
-**Why FidoNet?** Because it is cool and still alive.
+**Why FidoNet?** Because it is cool and still more than alive.
 
 **Why Docker?** FidoIP has a lot of irregularities like generating shell scripts
 with hardcoded configuration to `/usr/local/bin`. So it is difficult a bit
