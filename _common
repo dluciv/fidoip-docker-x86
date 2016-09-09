@@ -1,0 +1,2 @@
+IMAGE=fidoip32:1.0.5_5-1_2
+MOUNTS="-v $DIR/home/fido:/home/fido -v $DIR/usr/local/etc:/usr/local/etc -v $DIR/usr/local/bin:/usr/local/bin"

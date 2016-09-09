@@ -55,7 +55,8 @@ Run `$ ./fido-shell`, then you will see container user shell
 * `$ rs` to try to send/receive mail
 * `$ g` to launch GoldEd
 
-If you want to automate `$ rs`, `./fido-rs` is at your service, it just launches `rs` in `fido-shell`.
+If you want to automate `$ rs`, `./fido-rs` is at your service, it just launches `rs` in `fido-shell`
+without requirung `STDIN` to be a TTY.
 
 # Node mode
 

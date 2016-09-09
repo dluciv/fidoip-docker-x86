@@ -1,17 +1,13 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-IMAGE=fidoip32:1.0.5_5-1_2
+source $DIR/_common
 
 # http://stackoverflow.com/a/31316636/539470
 CONTAINER=$(docker create $IMAGE)
-
-# docker run --rm -it $CONTAINER bash
-
 mkdir -p $DIR/home $DIR/usr/local
 docker cp "$CONTAINER":/home/fido $DIR/home
 docker cp "$CONTAINER":/usr/local/etc $DIR/usr/local
 docker cp "$CONTAINER":/usr/local/bin $DIR/usr/local
-
 docker rm -v $CONTAINER
 
 $DIR/fido-shell bash
