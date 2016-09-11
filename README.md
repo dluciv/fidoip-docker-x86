@@ -48,6 +48,9 @@ important for GoldEd to function properly.
 `usr` and `home` subfolders contain your mail and settings,
 so they are likely subject of backup if you practice it =).
 
+Default timezone for the image is `Europe/Moscow`. You can override this by running `./fido-docker-build`
+with optional arg, e.g.: `./fido-docker-build --build-arg timezone=Asia/Novosibirsk`.
+
 ## To use configuration
 
 Run `$ ./fido-shell`, then you will see container user shell

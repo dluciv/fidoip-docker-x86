@@ -42,6 +42,12 @@ RUN wget 'http://downloads.sourceforge.net/project/fidoip/fidoip/1.0.5/fidoip-1.
  && rm fidoip-1.0.5_5-1.tar \
  && apt-get clean
 
+# Timezone
+
+ARG timezone=Europe/Moscow
+RUN echo $timezone > /etc/timezone \
+ && dpkg-reconfigure -f noninteractive tzdata
+
 # Shell
 
 CMD chmod g+rw /dev/console && /usr/bin/sudo -i -u fido
