@@ -18,13 +18,17 @@ RUN apt-get -y update \
  && locale-gen ru_RU.KOI8-R \
  && update-locale
 
+# Timezone
+
+ARG timezone=Europe/Moscow
+RUN echo $timezone > /etc/timezone \
+ && dpkg-reconfigure -f noninteractive tzdata
+
 # FidoIP installation
 
 WORKDIR /root
 
-RUN apt-get -y install build-essential unzip zip bzip2 libncurses5-dev gettext wget xutils screen texinfo
-
-RUN apt-get -y install cvs
+RUN apt-get -y install build-essential unzip zip bzip2 libncurses5-dev gettext wget xutils screen texinfo cvs
 
 ADD no-cvs-login.patch /root/
 
@@ -32,21 +36,16 @@ RUN wget 'http://downloads.sourceforge.net/project/fidoip/fidoip/1.0.5/fidoip-1.
  && tar -xpf fidoip-1.0.5_5-1.tar \
  && patch -p0 -t < no-cvs-login.patch \
  && cd fidoip-1.0.5 \
- && rm fidoip_win-1.0.5_5-1.zip \
  && ./fidoip-cvs-update.sh \
- && ./fido_linux.sh fido \
- && (echo 'Full Name\nStation Name\nLocation\n2:5030/1111.2222\nUplink Name\n2:5030/1111\nf1111.n5030.z2.binkp.net\nUplink Password\nn\ny' | ./setup_config.bash) \
+ && ./fido_linux.sh fido
+
+# Template node setup
+
+RUN cd fidoip-1.0.5 \
+ && (echo 'Full Name\nStation Name\nLocation\n9:9999/1111.2222\nUplink Name\n9:9999/1111\nf1111.n5030.z2.binkp.net\nUplink Password\nn\ny' | ./setup_config.bash) \
  && ./relinkapps.sh \
- && ./set_perm.sh fido \
- && cd \
- && rm fidoip-1.0.5_5-1.tar \
- && apt-get clean
+ && ./set_perm.sh fido
 
-# Timezone
-
-ARG timezone=Europe/Moscow
-RUN echo $timezone > /etc/timezone \
- && dpkg-reconfigure -f noninteractive tzdata
 
 # Shell
 
@@ -55,3 +54,9 @@ CMD chmod g+rw /dev/console && /usr/bin/sudo -i -u fido
 # Sharing
 
 VOLUME /usr/local/etc /usr/local/bin /home/fido
+
+# Cleanup
+
+RUN rm -rf * \
+ && apt-get -y purge --auto-remove build-essential cvs libncurses5-dev gcc \
+ && apt-get clean
