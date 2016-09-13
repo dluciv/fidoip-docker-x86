@@ -51,12 +51,11 @@ RUN cd fidoip-1.0.5 \
 
 CMD chmod g+rw /dev/console && /usr/bin/sudo -i -u fido
 
+# Cleanup
+
+RUN apt-get -y purge --auto-remove build-essential cvs libncurses5-dev gcc \
+ && apt-get clean
+
 # Sharing
 
 VOLUME /usr/local/etc /usr/local/bin /home/fido
-
-# Cleanup
-
-RUN rm -rf * \
- && apt-get -y purge --auto-remove build-essential cvs libncurses5-dev gcc \
- && apt-get clean
