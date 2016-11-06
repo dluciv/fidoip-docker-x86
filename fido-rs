@@ -2,4 +2,4 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/_common
 
-docker run $MOUNTS --rm $IMAGE sudo -u fido rs
+$DOCKER run $MOUNTS --rm $IMAGE sudo -u fido rs

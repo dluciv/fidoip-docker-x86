@@ -3,11 +3,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/_common
 
 # http://stackoverflow.com/a/31316636/539470
-CONTAINER=$(docker create $IMAGE)
+CONTAINER=$($DOCKER create $IMAGE)
 mkdir -p $DIR/home $DIR/usr/local
-docker cp "$CONTAINER":/home/fido $DIR/home
-docker cp "$CONTAINER":/usr/local/etc $DIR/usr/local
-docker cp "$CONTAINER":/usr/local/bin $DIR/usr/local
-docker rm -v $CONTAINER
+$DOCKER cp "$CONTAINER":/home/fido $DIR/home
+$DOCKER cp "$CONTAINER":/usr/local/etc $DIR/usr/local
+$DOCKER cp "$CONTAINER":/usr/local/bin $DIR/usr/local
+$DOCKER rm -v $CONTAINER
 
 $DIR/fido-shell bash
